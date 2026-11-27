@@ -179,3 +179,36 @@ main.bulk-main{padding-top:22px}
  .bulk-column h3{font-size:16px}.bulk-column-list{max-height:350px}
  .bulk-options,.bulk-options label{width:100%;min-width:0}
 }
+
+/* Barra disponível durante a rolagem e modo de pôsteres compactos. */
+.catalog-controls{position:sticky;top:0;z-index:8;background:var(--bg);padding:0 0 1px;border-bottom:1px solid var(--line);box-shadow:0 10px 15px -15px #000;margin-bottom:18px}
+.catalog-controls .toolbar{margin:12px 0;gap:8px}
+.catalog-controls .meta-line{margin:10px 0 12px}
+.display-controls{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
+.display-controls select{font-size:14px;max-width:260px;padding:10px}
+#results{overflow-anchor:none}
+#results[data-display="13"]{grid-template-columns:repeat(13,minmax(0,1fr));gap:12px 8px}
+#results[data-display="13"] .card-info,#results[data-display="13"] .card-menu,#results[data-display="13"] .badge{display:none}
+#results[data-display="13"] .poster .fallback{font-size:24px;padding:0}
+#results[data-display="13"] .pick{width:18px;height:18px;top:3px;left:3px;margin:0}
+.catalog-controls .toolbar select{max-width:220px}
+@media(max-width:900px){
+ .catalog-controls .catalog-tabs-row .tabs button{padding:12px 0}
+ .catalog-controls .meta-line{gap:8px}
+ .catalog-controls .view-tools{gap:8px}
+}
+@media(max-width:640px){
+ #results[data-display="13"]{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px 6px}
+ .catalog-controls .catalog-signature{display:none}
+ .catalog-controls .catalog-tabs-row{padding:0}
+ .catalog-controls .toolbar{gap:6px;margin:8px 0}
+ .catalog-controls .toolbar input[type=search]{flex-basis:100%;padding:8px}
+ .catalog-controls .toolbar select{font-size:14px;padding:8px;max-width:none}
+ .catalog-controls .toolbar button{padding:8px 10px}
+ .catalog-controls .meta-line{margin:8px 0}
+ .catalog-controls #count{font-size:11px}
+ .catalog-controls .view-tools{width:100%;justify-content:space-between}
+ .display-controls{gap:6px;font-size:12px}
+ .display-controls select{font-size:14px;padding:8px;max-width:190px}
+ .catalog-controls #select-mode{font-size:12px;padding:8px}
+}
